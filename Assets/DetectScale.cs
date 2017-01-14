@@ -14,9 +14,26 @@ public class DetectScale : MonoBehaviour {
 	void Start () {
         currScale = gameObject.transform.localScale;
 	}
+
+    // Use for Scaling Up
+    public void ScaleUp()
+    {
+        newScale = currScale * (1 + (scaleUpFactor * Time.deltaTime));
+        gameObject.transform.localScale = newScale;
+        currScale = newScale;
+    }
+    
+    // Use for Scaling Down
+    public void ScaleDown()
+    {
+        newScale = currScale * (1 - (scaleDownFactor * Time.deltaTime));
+        gameObject.transform.localScale = newScale;
+        currScale = newScale;
+    }
 	
 	// Update is called once per frame
 	void Update () {
+        /*
 		if (Input.GetKey(KeyCode.UpArrow))
         {
             //scale up
@@ -32,5 +49,6 @@ public class DetectScale : MonoBehaviour {
             gameObject.transform.localScale = newScale;
             currScale = newScale;
         }
+        */
 	}
 }
