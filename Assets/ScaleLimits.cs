@@ -31,10 +31,10 @@ public class ScaleLimits : MonoBehaviour {
     }
 
     // Key value pairs with the scale limits and their corresponding monitor text hints.
-    ROOM_MIN_SCALE = new KeyValuePair<float, string>(0.1f, "The spider is blocking me...");
-    ROOM_MAX_SCALE = new KeyValuePair<float, string>(20.0f, "The roof is in the way!");
-    CITY_MAX_SCALE = new KeyValuePair<float, string>(0.0f, "");
-    GLOBAL_MAX_SCALE = new KeyValuePair<float, string>(0.0f, "");
+    ROOM_MIN_SCALE = new KeyValuePair<float, string>(0.1f, "The spider is blocking my way.");
+    ROOM_MAX_SCALE = new KeyValuePair<float, string>(5.8432f, "The roof is blocking my way.");
+    CITY_MAX_SCALE = new KeyValuePair<float, string>(Mathf.Infinity, "");
+    GLOBAL_MAX_SCALE = new KeyValuePair<float, string>(Mathf.Infinity, "");
     ATOMIC_MIN_SCALE = new KeyValuePair<float, string>(0.0f, "");
 
   }
