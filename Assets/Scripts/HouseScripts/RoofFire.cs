@@ -19,6 +19,7 @@ public class RoofFire : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log(collision.collider.name);
         if (collision.collider.GetComponent<MatchFire>())
         {
             StartCoroutine(SetRoofOnFire());
@@ -38,6 +39,8 @@ public class RoofFire : MonoBehaviour {
 
         //Wait for a few seconds, then destroy the roof.
         yield return new WaitForSeconds(roofBurnTime);
+
+        ScaleLimits.IncreaseMaxScaleLimit();
         GameObject.Destroy(this.gameObject);
     }
 }
