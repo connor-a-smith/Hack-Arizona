@@ -80,12 +80,12 @@ public class ScaleLimits : MonoBehaviour {
 
   public static void IncreaseMaxScaleLimit() {
 
-    if (currentActiveMax == ROOM_MAX_SCALE) {
+    if (currentActiveMax.Key == ROOM_MAX_SCALE.Key) {
 
       currentActiveMax = CITY_MAX_SCALE;
      
     }
-    else if (currentActiveMax == CITY_MAX_SCALE) {
+    else if (currentActiveMax.Key == CITY_MAX_SCALE.Key) {
 
       currentActiveMax = GLOBAL_MAX_SCALE;
 
@@ -94,7 +94,7 @@ public class ScaleLimits : MonoBehaviour {
 
   public static void DecreaseMinScaleLimit() {
 
-    if (currentActiveMin == ROOM_MIN_SCALE) {
+    if (currentActiveMin.Key == ROOM_MIN_SCALE.Key) {
 
       currentActiveMin = ATOMIC_MIN_SCALE;
 
