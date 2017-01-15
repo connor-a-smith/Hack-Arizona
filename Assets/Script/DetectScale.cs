@@ -6,7 +6,7 @@ public class DetectScale : MonoBehaviour {
 
     private Vector3 currScale;
     private Vector3 newScale;
-
+    
     [SerializeField] private float scaleUpFactor = 1.05f;
     [SerializeField] private float scaleDownFactor = 0.95f;
 
