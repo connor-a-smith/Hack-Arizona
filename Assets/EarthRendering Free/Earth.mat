@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Earth
+  m_Shader: {fileID: 4800000, guid: b1fac95321091764e8f70867c2a349fd, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+    - first:
+        name: _CloudAndNightTex
+      second:
+        m_Texture: {fileID: 2800000, guid: fe291fffbbf2f834fb076ded04466eda, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _DiffuseTex
+      second:
+        m_Texture: {fileID: 2800000, guid: 521c473bd713eff468f556acaf453a9c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _MainTex
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _NormalAndSpecularTex
+      second:
+        m_Texture: {fileID: 2800000, guid: 3070d0b18ee1303498b4a16fe6066ad0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - first:
+        name: _AtmosphereMultiply
+      second: 1.5
+    - first:
+        name: _AtmospherePow
+      second: 3.1607144
+    - first:
+        name: _SunsetIntensity
+      second: 0.7464286
+    m_Colors:
+    - first:
+        name: _AtmosphereColor
+      second: {r: 0.6313726, g: 0.7411765, b: 1, a: 1}
+    - first:
+        name: _Color
+      second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
+        name: _LightDir
+      second: {r: -1, g: 0, b: 0, a: 1}
+    - first:
+        name: _SkyColor
+      second: {r: 0.08235294, g: 0.18431373, b: 0.3529412, a: 1}
+    - first:
+        name: _SunsetColor
+      second: {r: 0.8980392, g: 0.4117647, b: 0.14509805, a: 1}
