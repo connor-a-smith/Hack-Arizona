@@ -21,7 +21,7 @@ public class RoofFire : MonoBehaviour {
     {
         if (collision.collider.GetComponent<MatchFire>())
         {
-
+            StartCoroutine(SetRoofOnFire());
 
 
         }
