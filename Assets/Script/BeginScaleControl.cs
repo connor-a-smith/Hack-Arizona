@@ -30,6 +30,7 @@ public class BeginScaleControl : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("MainCamera"))
         {
+            Debug.Log("camera enters");
             SetRadialPanelsActive(true);
         }
     }
@@ -38,12 +39,14 @@ public class BeginScaleControl : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("MainCamera"))
         {
+            Debug.Log("camera exits");
             SetRadialPanelsActive(false);
         } 
     }
 
     void SetRadialPanelsActive(bool active)
     {
+        Debug.Log("radial turns: " + active);
         if (!active && hasScaled)
         {
             leftMenuPanel.GetComponent<RadialMenu>().UnClickButton(351.6f);

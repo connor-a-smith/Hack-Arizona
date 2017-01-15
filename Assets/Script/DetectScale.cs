@@ -21,9 +21,9 @@ public class DetectScale : MonoBehaviour {
     // Use for Scaling Up
     public void ScaleUp()
     {
-        if (currScale.x < citySceneLimit)
+        newScale = currScale * (1 + (scaleUpFactor * Time.deltaTime));
+        if (ScaleLimits.IsWithinScaleLimits(newScale))
         {
-            newScale = currScale * (1 + (scaleUpFactor * Time.deltaTime));
             gameObject.transform.localScale = newScale;
             currScale = newScale;
         }
@@ -32,9 +32,9 @@ public class DetectScale : MonoBehaviour {
     // Use for Scaling Down
     public void ScaleDown()
     {
-        if (currScale.x > antSceneLimit)
+        newScale = currScale * (1 - (scaleDownFactor * Time.deltaTime));
+        if (ScaleLimits.IsWithinScaleLimits(newScale))
         {
-            newScale = currScale * (1 - (scaleDownFactor * Time.deltaTime));
             gameObject.transform.localScale = newScale;
             currScale = newScale;
         }

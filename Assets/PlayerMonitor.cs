@@ -20,11 +20,19 @@ public class PlayerMonitor : MonoBehaviour {
   [SerializeField] private float radiusFromPlayer = 10.0f;
   [SerializeField] private float viewAngle = 0.0f;
 
+    [SerializeField]
+    private GameObject playerScaleObject;
+
+    private float playerInitialScale;
+    private float initialScale;
+
   private List<Vector3> floatPoints;
 
   private Text monitorText;
 
   private bool monitorVisible = false;
+
+    private GameObject monitorJointObject;
 
   void Awake() {
 
@@ -48,6 +56,9 @@ public class PlayerMonitor : MonoBehaviour {
       playerObject = Camera.main.gameObject;
     }
 
+        playerInitialScale = playerScaleObject.transform.localScale.x;
+        initialScale = this.transform.localScale.x;
+
     monitorText = GetComponentInChildren<Text>();
 
     // Make sure that the monitor is at the desired height, relative to Camera scale.
@@ -59,7 +70,7 @@ public class PlayerMonitor : MonoBehaviour {
     this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
 
     // Create a new monitor Joinect object to connect the monitor to.
-    GameObject monitorJointObject = new GameObject("MonitorJoint");
+    monitorJointObject = new GameObject("MonitorJoint");
    
     // Set up the monitor joint under the player, so that the monitor follows the player.
     monitorJointObject.transform.parent = playerObject.transform;
@@ -93,7 +104,18 @@ public class PlayerMonitor : MonoBehaviour {
     // Ensure that the monitor is always moving with the joint - not springing around.
     this.GetComponent<Rigidbody>().velocity = Vector3.zero;
 
-    if (Input.GetKeyDown("g")) {
+        float newScale = (playerScaleObject.transform.localScale.x / playerInitialScale) * initialScale;
+        this.transform.localScale = new Vector3(newScale, newScale, newScale);
+
+        float newZValue = radiusFromPlayer * (playerScaleObject.transform.localScale.x / playerInitialScale);
+        //  monitorJointObject.transform.localPosition = new Vector3(0.0f, 0.0f, newZValue);
+
+        this.transform.position = new Vector3(this.transform.position.x,
+            monitorHeight * (playerScaleObject.transform.localScale.x / playerInitialScale) + 1.1f,
+            this.transform.position.z);
+
+
+        if (Input.GetKeyDown("g")) {
 
       SetText("Hello");
 
